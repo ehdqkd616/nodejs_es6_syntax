@@ -1,0 +1,75 @@
+@function card-width($col_num, $container_width)
+@return ($container_width / $col_num)
+
+@function calc-width($col_num, $margin)
+@return calc((100% / #{$col_num}) - #{$margin})
+
+.card
+    width: card-width(4, 1000px)
+
+.calc_card
+    width: calc-width(6, 10px)
+
+    @mixin highlight($color, $size: 14px)
+        color: $color
+        font-size: $size
+
+.heading_one
+@include highlight(red, 20px)
+
+.heading_two
+@include highlight(blue)
+
+@mixin button($queryString)
+@media #{$queryString}
+    width: 100%
+&:hover,
+&:active,
+&:focus
+@content
+
+.button
+    width: 300px
+    color: blue
+
+@include button("(max-width: 767px)")
+color: red
+
+    .box
+        border: 1px solid #eee
+        padding: 10px
+        display: block
+
+.alert_box
+    @extend .box
+    background-color: #666
+    color: #fff
+
+%notice_box
+    color: #999
+    font-weight: bold
+
+.success_box
+    @extend .box
+    @extend %notice_box
+    background-color: green
+
+.error_box
+    @extend .box
+    @extend %notice_box
+    background-color: red
+
+    @import layout
+
+    .container
+a
+    color: #666
+&:hover
+    text-decoration: underline
+    color: #000
+
+&:visited
+    color: #eee
+
+@at-root div
+    background-color: #eee
