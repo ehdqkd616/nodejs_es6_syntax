@@ -1,5 +1,5 @@
 class Person {
-    constructor (id, name) {
+    constructor(id, name) {
         this.id = id;
         this.name = name;
     }
@@ -9,7 +9,7 @@ class Person {
 }
 
 class Student extends Person {
-    constructor (id, name, age) {
+    constructor(id, name, age) {
         super(id, name);
         this.age = age;
     }
