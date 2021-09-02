@@ -1,1 +1,1 @@
-# emfo_test_ES6
+# nodejs_es6_syntax
