@@ -1,1 +1,1 @@
-# nodejs_test
+# nodejs_es6_syntax
